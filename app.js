@@ -12,7 +12,7 @@ app.use(express.static('public'));
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/landing-page', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false,
+    useCreateIndex: true,
 });
 
 const Subscriber = mongoose.model('Subscriber', {
